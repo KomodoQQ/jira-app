@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-jira-app-302921": {
+      "hosting": {
+        "jira-app": [
+          "my-jira-app-302921"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "appjira": "my-jira-app-302921"
+  }
+}
