@@ -8,10 +8,18 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { BoardComponent } from './pages/board/board.component';
+import { AddTaskComponent } from './pages/add-task/add-task.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainLayoutComponent,
+    LoginComponent,
+    BoardComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

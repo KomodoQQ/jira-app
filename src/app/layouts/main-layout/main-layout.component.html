@@ -1,0 +1,11 @@
+<p>main-layout works!</p>
+<div class="container">
+  <aside class="nav-menu">Menu</aside>
+  <main class="content">
+    <div class="content-header">Content header</div>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<button (click)="auth.signOut()">Sign Out</button>

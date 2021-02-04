@@ -1,4 +1,4 @@
-<!-- <h1>Jira App</h1>
+<h1>Jira App</h1>
 <div *ngIf="auth.user$ | async as user; else login">
   {{ user | json}}
   <hr>
@@ -8,6 +8,4 @@
 
 <ng-template #login>
   <button (click)="auth.googleSignin()">Google sign in</button>
-</ng-template> -->
-
-<router-outlet></router-outlet>
+</ng-template>
