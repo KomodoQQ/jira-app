@@ -1,6 +1,16 @@
-<p>main-layout works!</p>
-<div class="container">
-  <aside class="nav-menu">Menu</aside>
+<header class="header">
+  <h2 class="app-logo">Jira App</h2>
+</header>
+<div class="app-container">
+  <aside class="nav-menu">
+    <div class="nav-links">
+      <a routerLink="/board" routerLinkActive="active-link">Go to Board</a>
+      <a routerLink="/create-task" routerLinkActive="active-link">Create task</a>
+    </div>
+    <div class="btn">
+      <button class="logout-btn" (click)="auth.signOut()">Sign Out</button>
+    </div>
+  </aside>
   <main class="content">
     <div class="content-header">Content header</div>
     <div class="main-content">
@@ -8,4 +18,4 @@
     </div>
   </main>
 </div>
-<button (click)="auth.signOut()">Sign Out</button>
+

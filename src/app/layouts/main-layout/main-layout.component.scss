@@ -1,0 +1,41 @@
+.header {
+  background-color: rgb(165, 55, 255);
+  color: #fff;
+  .app-logo {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.app-container {
+  display: flex;
+}
+.nav-menu {
+  width: 20%;
+  height: calc(100vh - 32px);
+  background-color: rgb(188, 130, 255);
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    a {
+      background-color: rgb(148, 56, 253);
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+      margin-bottom: 10px;
+      .active-link {
+        background-color: rgb(246, 246, 246);
+      }
+    }
+    a:visited {
+      text-decoration: none;
+    }
+  }
+  
+}
+
+.content {
+  background-color: rgb(246, 246, 246);
+  width: 100%;
+}
