@@ -8,7 +8,7 @@ import {
   AngularFirestoreDocument
  } from "@angular/fire/firestore";
 
- import { of } from "rxjs";
+ import { Observable, of } from "rxjs";
  import { switchMap } from "rxjs/operators";
  import { User } from "./models";
 
@@ -17,21 +17,23 @@ import {
 })
 export class AuthService {
   user$: any;
+  users$: any;
 
   constructor(
     private afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
+    private db: AngularFirestore,
     private router: Router
   ) { 
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+          return this.db.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
       })
     );
+    this.users$ = this.db.collection('users').valueChanges();
   }
   
   async googleSignin() {
@@ -47,7 +49,7 @@ export class AuthService {
   }
 
   updateUserData(user: User) {
-    const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+    const userRef: AngularFirestoreDocument<User> = this.db.doc(`users/${user.uid}`);
     const data = {
       uid: user.uid,
       email: user.email,

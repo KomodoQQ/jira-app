@@ -6,10 +6,11 @@ export interface User {
 }
 
 export interface Task {
+  taskId: string,
   title: string,
   assignee: string,
-  owner: string,
+  owner?: string,
   description: string,
-  createdDate: Date,
-  status: string
+  createdDate?: Date,
+  status?: string
 }

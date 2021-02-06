@@ -16,6 +16,7 @@ import { AddTaskComponent } from './pages/add-task/add-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     AngularFireAuthModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
