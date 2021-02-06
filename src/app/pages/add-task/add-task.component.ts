@@ -13,17 +13,21 @@ import { TaskService } from 'src/app/services/task.service';
 export class AddTaskComponent implements OnInit {
 
   form!: FormGroup;
+  user: any;
   users: any;
 
   constructor(public task: TaskService, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.auth.user$.subscribe((user: any) => {
+      this.user = user;
+    })
     this.auth.users$.subscribe((users: any) => {
       this.users = users;
     });
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
-      assignee: new FormControl(null, Validators.required),
+      assignee: new FormControl(null),
       description: new FormControl(null),
     });
   }

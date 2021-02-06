@@ -1,14 +1,16 @@
 <header class="header">
-  <h2 class="app-logo">Jira App</h2>
+  <a routerLink="/board">
+    <h2 class="app-logo">Jira App</h2>
+  </a>
+  <div class="logout-btn-wrap">
+    <button class="logout-btn" (click)="auth.signOut()" mat-raised-button color="primary">Sign Out</button>
+  </div>
 </header>
 <div class="app-container">
   <aside class="nav-menu">
     <div class="nav-links">
       <a routerLink="/board" routerLinkActive="active-link">Go to Board</a>
       <a routerLink="/create-task" routerLinkActive="active-link">Create task</a>
-    </div>
-    <div class="btn">
-      <button class="logout-btn" (click)="auth.signOut()">Sign Out</button>
     </div>
   </aside>
   <main class="content">

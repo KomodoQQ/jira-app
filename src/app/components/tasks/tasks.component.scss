@@ -29,6 +29,15 @@
   border: none;
 }
 
+.delete-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-btn {
+  background-color: rgb(255, 0, 0);
+}
+
 /* Highlight the list item that is being dragged. */
 .cdk-drag-preview {
   border-radius: 4px;

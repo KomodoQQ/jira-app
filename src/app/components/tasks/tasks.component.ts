@@ -10,35 +10,26 @@ import { Task } from 'src/app/services/models';
 })
 export class TasksComponent implements OnInit {
   tasks = [];
-  // todo = [
-  //   'Get to work',
-  //   'Pick up groceries',
-  //   'Go home',
-  //   'Fall asleep'
-  // ];
   todo: any;
   done: any;
-  // done = [
-  //   'Get up',
-  //   'Brush teeth',
-  //   'Take a shower',
-  //   'Check e-mail',
-  //   'Walk dog'
-  // ];
-  constructor(public taskService: TaskService) {
+  inprogress: any;
 
-  }
-  ngOnInit(): void {
+  constructor(public taskService: TaskService) {
     this.taskService.tasks$.subscribe((tasks: any) => {
       this.tasks = tasks;
-      console.log(tasks);
       this.todo = this.tasks.filter((task: any) => {
         return task.status == 'todo';
+      })
+      this.inprogress = this.tasks.filter((task: any) => {
+        return task.status == 'inprogress';
       })
       this.done = this.tasks.filter((task: any) => {
         return task.status == 'done';
       })
     })
+  }
+  ngOnInit(): void {
+    
   }
 
   drop(event: CdkDragDrop<string[]>) {

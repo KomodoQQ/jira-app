@@ -43,4 +43,12 @@ export class TaskService {
     }
     return taskRef.set(data, { merge: true });
   }
+
+  deleteTask(task: any) {
+    this.db.doc(`tasks/${task.taskId}`).delete()
+      .then()
+      .catch(err => {
+        console.log(err.message);
+      })
+  }
 }
