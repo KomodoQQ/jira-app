@@ -44,6 +44,10 @@ export class TaskService {
     return taskRef.set(data, { merge: true });
   }
 
+  getById(id: any) {
+    return this.db.doc<Task>(`tasks/${id}`).valueChanges();
+  }
+
   deleteTask(task: any) {
     this.db.doc(`tasks/${task.taskId}`).delete()
       .then()

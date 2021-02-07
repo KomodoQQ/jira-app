@@ -57,4 +57,8 @@ export class AuthService {
     }
     return userRef.set(data, { merge: true });
   }
+
+  getById(id: any) {
+    return this.db.doc<User>(`users/${id}`).valueChanges();
+  }
 }

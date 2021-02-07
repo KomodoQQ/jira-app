@@ -1,1 +1,8 @@
-<p>task-info works!</p>
+<div *ngIf="task && assignedTo; else loading" class="content">
+  <h3>{{task.title}}</h3>
+  <p>Assigned to: {{assignedTo}}</p>
+  <p>Status: {{task.status}}</p>
+  <p>Created by: {{task.owner}} on {{task.createdDate | date: 'MMM d, y, h:mm:ss a'}}</p>
+  <p>Description: {{task.description}}</p>
+</div>
+<ng-template #loading>Task info is loading... Please wait</ng-template>
